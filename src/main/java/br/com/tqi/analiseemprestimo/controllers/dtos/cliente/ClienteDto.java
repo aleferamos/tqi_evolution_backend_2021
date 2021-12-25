@@ -3,7 +3,6 @@ package br.com.tqi.analiseemprestimo.controllers.dtos.cliente;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter

@@ -10,6 +10,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
@@ -17,6 +19,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             "(c.id, c.nome, c.email, c.cpf, c.rg, c.renda, c.senha) " +
             "FROM Cliente c")
     Page<ClienteDto> getAll(Pageable pageable);
+
+
+    Optional<Cliente> findById(Long id);
 
     @Query("SELECT DISTINCT CASE " +
             "WHEN COUNT(cliente) > 0 THEN true " +

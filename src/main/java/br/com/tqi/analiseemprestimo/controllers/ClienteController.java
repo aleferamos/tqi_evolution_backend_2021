@@ -29,7 +29,12 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<ClienteDto> salvar (@RequestBody ClienteFormDto clienteFormDto){
+    public ResponseEntity<ClienteDto> salvar(@RequestBody ClienteFormDto clienteFormDto){
         return ResponseEntity.ok(clienteService.save(clienteFormDto));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ClienteDto> buscar(@PathVariable(value = "id") Long id){
+        return ResponseEntity.ok(clienteService.getById(id));
     }
 }

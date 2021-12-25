@@ -1,19 +1,17 @@
 package br.com.tqi.analiseemprestimo.services;
 
-import br.com.tqi.analiseemprestimo.controllers.dtos.CadastrarCliente.CadastrarClienteDto;
-import br.com.tqi.analiseemprestimo.controllers.dtos.CadastrarCliente.CadastrarClienteFormDto;
+import br.com.tqi.analiseemprestimo.controllers.dtos.cadastrarCliente.CadastrarClienteDto;
+import br.com.tqi.analiseemprestimo.controllers.dtos.cadastrarCliente.CadastrarClienteFormDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteFormDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoFormDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
-import br.com.tqi.analiseemprestimo.models.Cliente;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 
 @Service
 public class CadastrarClienteService {

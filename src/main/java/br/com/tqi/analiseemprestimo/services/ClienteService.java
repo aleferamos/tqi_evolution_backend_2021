@@ -27,7 +27,6 @@ public class ClienteService {
     public Page<ClienteDto> listar(Pageable pageable){
         return clienteRepository.getAll(pageable);
     }
-
     public ClienteDto save(ClienteFormDto clienteFormDto){
         Cliente cliente = modelMapper.map(clienteFormDto, Cliente.class);
         Boolean existEmail = clienteRepository.existEmail(cliente.getEmail(), cliente.getId());
@@ -38,5 +37,11 @@ public class ClienteService {
         ClienteDto clienteDto = modelMapper.map(clienteRepository.save(cliente), ClienteDto.class);
 
         return clienteDto;
+    }
+
+    public ClienteDto getById(Long id){
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("cliente.naoEncontrado"));
+        ClienteDto clienteConvert = modelMapper.map(cliente, ClienteDto.class);
+        return clienteConvert;
     }
 }

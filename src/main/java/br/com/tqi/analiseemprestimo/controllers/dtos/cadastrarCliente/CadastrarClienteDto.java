@@ -1,4 +1,4 @@
-package br.com.tqi.analiseemprestimo.controllers.dtos.CadastrarCliente;
+package br.com.tqi.analiseemprestimo.controllers.dtos.cadastrarCliente;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoDto;
