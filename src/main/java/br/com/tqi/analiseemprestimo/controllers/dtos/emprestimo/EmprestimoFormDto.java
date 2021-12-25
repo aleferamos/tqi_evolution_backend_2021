@@ -13,10 +13,6 @@ import java.time.LocalDate;
 @Setter
 public class EmprestimoFormDto {
 
-    @NotNull(message = "Data de emissao está vazia!")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private LocalDate emissao;
-
     @NotBlank
     private String valor;
 
