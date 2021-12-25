@@ -62,6 +62,9 @@ public class EmprestimoService {
         LocalDate dataConvert = date.toInstant().atZone( ZoneId.systemDefault()).toLocalDate();
         LocalDate dataPrimeiraParcela = emprestimo.getDataPrimeiraParcela();
 
+        if(dataPrimeiraParcela.isAfter(dataConvert)){
+            throw new RegraDeNegocioException("parcela.dataPrimeiraParcela");
+        }
         if(dataPrimeiraParcela.isBefore(dataConvert)){
             System.out.println(dataPrimeiraParcela + " é menor que: " + dataConvert);
         } else {
