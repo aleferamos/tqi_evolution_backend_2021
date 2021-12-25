@@ -8,7 +8,6 @@ import br.com.tqi.analiseemprestimo.repositories.EnderecoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
 @Service
 public class EnderecoService {
@@ -23,22 +22,9 @@ public class EnderecoService {
     }
 
     public EnderecoDto save(EnderecoFormDto enderecoFormDto){
-        if(isEmpty(enderecoFormDto) == true){
-            throw new RegraDeNegocioException("cliente.campoVazio");
-        }
         Endereco endereco = modelMapper.map(enderecoFormDto, Endereco.class);
         EnderecoDto enderecoDto = modelMapper.map(enderecoRepository.save(endereco), EnderecoDto.class);
         return enderecoDto;
     }
 
-    Boolean  isEmpty (EnderecoFormDto enderecoFormDto){
-        Boolean isEmpty = false;
-        if(enderecoFormDto.getApelido().isEmpty()
-           || enderecoFormDto.getRua().isEmpty()
-           || enderecoFormDto.getNumero().isEmpty()
-           || enderecoFormDto.getCep().isEmpty()){
-            isEmpty = true;
-        }
-        return isEmpty;
-    }
 }

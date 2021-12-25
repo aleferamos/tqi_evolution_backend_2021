@@ -1,5 +1,6 @@
 package br.com.tqi.analiseemprestimo.services;
 
+import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoFormDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteFormDto;
