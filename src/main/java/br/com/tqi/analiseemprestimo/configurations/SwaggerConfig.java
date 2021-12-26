@@ -27,8 +27,7 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("br.com.tqi.analiseemprestimo.controllers"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo())
-                .globalResponseMessage(RequestMethod.GET, responseMessageForGET());
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {

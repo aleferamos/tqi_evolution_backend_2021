@@ -23,17 +23,17 @@ public class EmprestimoController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<Page<EmprestimoDto>> listar(Pageable pageable, @PathVariable(value = "idCliente") Long idCliente){
+    public ResponseEntity<Page<EmprestimoDto>> listarEmprestimos(Pageable pageable, @PathVariable(value = "idCliente") Long idCliente){
         return ResponseEntity.ok(emprestimoService.listarEmprestimos(pageable, idCliente));
     }
 
     @PostMapping("/novo")
-    public ResponseEntity<EmprestimoDto> salvar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto, @PathVariable(value = "idCliente") Long idCliente){
+    public ResponseEntity<EmprestimoDto> solicitar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto, @PathVariable(value = "idCliente") Long idCliente){
         return ResponseEntity.ok(emprestimoService.save(emprestimoFormDto, idCliente));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<EmprestimoDto> buscar(@PathVariable(value = "idCliente") Long idCliente, @PathVariable(value = "id") Long idEmprestimo){
+    @GetMapping("/detalhe/{codigoEmprestimo}")
+    public ResponseEntity<EmprestimoDto> buscarDetalhes(@PathVariable(value = "idCliente") Long idCliente, @PathVariable(value = "codigoEmprestimo") Long idEmprestimo){
         return ResponseEntity.ok(emprestimoService.buscarEmprestimo(idCliente, idEmprestimo));
     }
 }

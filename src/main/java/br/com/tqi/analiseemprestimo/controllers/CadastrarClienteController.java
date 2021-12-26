@@ -27,7 +27,7 @@ public class CadastrarClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<CadastrarClienteDto> salvar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
+    public ResponseEntity<CadastrarClienteDto> cadastrar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
         return ResponseEntity.ok(cadastrarClienteService.save(cadastrarClienteFormDto));
     }
 }
