@@ -23,5 +23,4 @@ public class EmprestimoFormDto {
     @NotNull(message = "Quantidade de parcelas nulo")
     private Long quantidadeParcelas;
 
-    private StatusEmprestimoEnum status;
 }
