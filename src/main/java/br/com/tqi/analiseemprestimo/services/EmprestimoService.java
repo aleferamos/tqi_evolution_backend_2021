@@ -1,6 +1,5 @@
 package br.com.tqi.analiseemprestimo.services;
 
-import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoFormDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
@@ -14,13 +13,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
+
 
 @Service
 public class EmprestimoService {
@@ -28,7 +26,6 @@ public class EmprestimoService {
     private EmprestimoRepository emprestimoRepository;
     private ClienteService clienteService;
     private ModelMapper modelMapper;
-    private SimpleDateFormat simpleDateFormat;
 
     @Autowired
     public EmprestimoService(EmprestimoRepository emprestimoRepository, ClienteService clienteService, ModelMapper modelMapper) {
@@ -51,31 +48,31 @@ public class EmprestimoService {
 
         emprestimo.setEmissao(LocalDate.now());
 
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat formatador = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = modelMapper.map(emprestimo.getEmissao(), Date.class);
-
-        cal.setTime(date);
-        cal.add(Calendar.MONTH, 3);
-        date = cal.getTime();
-
-        LocalDate dataConvert = date.toInstant().atZone( ZoneId.systemDefault()).toLocalDate();
-        LocalDate dataPrimeiraParcela = emprestimo.getDataPrimeiraParcela();
-
-        if(dataPrimeiraParcela.isAfter(dataConvert)){
-            throw new RegraDeNegocioException("parcela.dataPrimeiraParcela");
-        }
-        if(dataPrimeiraParcela.isBefore(dataConvert)){
-            System.out.println(dataPrimeiraParcela + " é menor que: " + dataConvert);
-        } else {
-            System.out.println(dataPrimeiraParcela + " é maior que: " + dataConvert);
-        }
+        verificarData(emprestimo.getEmissao(), emprestimo.getDataPrimeiraParcela());
 
         emprestimo.setStatus(StatusEmprestimoEnum.ANALISE);
         emprestimo.setCliente(cliente);
 
         EmprestimoDto emprestimoDto = modelMapper.map(emprestimoRepository.save(emprestimo), EmprestimoDto.class);
         return emprestimoDto;
+    }
+
+    Boolean verificarData(LocalDate dataEmissao, LocalDate PrimeiraParcela){
+        Calendar cal = Calendar.getInstance();
+        Date date = modelMapper.map(dataEmissao, Date.class);
+
+        cal.setTime(date);
+        cal.add(Calendar.MONTH, 3);
+        date = cal.getTime();
+
+        LocalDate dataConvert = date.toInstant().atZone( ZoneId.systemDefault()).toLocalDate();
+        LocalDate dataPrimeiraParcela = PrimeiraParcela;
+
+        if(dataPrimeiraParcela.isAfter(dataConvert)){
+            throw new RegraDeNegocioException("parcela.dataPrimeiraParcela");
+        }
+
+        return false;
     }
 
 
