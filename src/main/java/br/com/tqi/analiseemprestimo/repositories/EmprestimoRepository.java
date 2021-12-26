@@ -10,6 +10,12 @@ import org.springframework.data.jpa.repository.Query;
 public interface EmprestimoRepository extends JpaRepository<Emprestimo, Long> {
 
     @Query("SELECT NEW br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto" +
-            "(e.id, e.emissao, e.dataPrimeiraParcela, e.quantidadeParcelas, e.status, e.cliente) FROM Emprestimo e")
-    Page<EmprestimoDto> getAll (Pageable pageable);
+            "(e.id, e.valor, e.quantidadeParcelas, e.status) FROM Emprestimo e " +
+            " WHERE e.cliente.id = :idCliente")
+    Page<EmprestimoDto> getAll (Pageable pageable, Long idCliente);
+
+    @Query("SELECT NEW br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto" +
+            "(e.id, e.valor, e.quantidadeParcelas, e.dataPrimeiraParcela, e.status, e.cliente) FROM Emprestimo e " +
+            " WHERE e.cliente.id = :idCliente AND e.id = :idEmprestimo")
+    EmprestimoDto buscar (Long idCliente, Long idEmprestimo);
 }

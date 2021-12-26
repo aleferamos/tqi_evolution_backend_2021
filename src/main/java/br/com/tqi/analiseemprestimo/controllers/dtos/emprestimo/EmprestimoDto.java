@@ -14,6 +14,8 @@ public class EmprestimoDto {
 
     private Long id;
 
+    private Long codigoEmprestimo;
+
     private String valor;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
@@ -28,6 +30,9 @@ public class EmprestimoDto {
 
     private Cliente cliente;
 
+    private String email;
+
+    private String renda;
     public EmprestimoDto() {
     }
 
@@ -38,5 +43,22 @@ public class EmprestimoDto {
         this.quantidadeParcelas = quantidadeParcelas;
         this.status = status;
         this.cliente = cliente;
+    }
+
+    public EmprestimoDto(Long id, String valor, Long quantidadeParcelas, StatusEmprestimoEnum status) {
+        this.codigoEmprestimo = id;
+        this.valor = valor;
+        this.quantidadeParcelas = quantidadeParcelas;
+        this.status = status;
+    }
+
+    public EmprestimoDto(Long id, String valor, Long quantidadeParcelas, LocalDate dataPrimeiraParcela, StatusEmprestimoEnum status ,Cliente cliente) {
+        this.codigoEmprestimo = id;
+        this.valor = valor;
+        this.quantidadeParcelas = quantidadeParcelas;
+        this.dataPrimeiraParcela = dataPrimeiraParcela;
+        this.email = cliente.getEmail();
+        this.renda = cliente.getRenda();
+        this.status = status;
     }
 }

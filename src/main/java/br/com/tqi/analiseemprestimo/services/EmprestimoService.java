@@ -7,6 +7,7 @@ import br.com.tqi.analiseemprestimo.models.Cliente;
 import br.com.tqi.analiseemprestimo.models.Emprestimo;
 import br.com.tqi.analiseemprestimo.repositories.EmprestimoRepository;
 import br.com.tqi.analiseemprestimo.util.Enums.Emprestimo.StatusEmprestimoEnum;
+import br.com.tqi.analiseemprestimo.util.Funcao;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,29 +27,38 @@ public class EmprestimoService {
     private EmprestimoRepository emprestimoRepository;
     private ClienteService clienteService;
     private ModelMapper modelMapper;
+    private Funcao funcao;
 
     @Autowired
-    public EmprestimoService(EmprestimoRepository emprestimoRepository, ClienteService clienteService, ModelMapper modelMapper) {
+    public EmprestimoService(EmprestimoRepository emprestimoRepository, ClienteService clienteService, ModelMapper modelMapper, Funcao funcao) {
         this.emprestimoRepository = emprestimoRepository;
         this.clienteService = clienteService;
         this.modelMapper = modelMapper;
+        this.funcao = funcao;
     }
 
     public Page<EmprestimoDto> listarEmprestimos(Pageable pageable, Long idCliente){
-        return emprestimoRepository.getAll(pageable);
+        funcao.verificarCliente(idCliente);
+        Page<EmprestimoDto> emprestimos = emprestimoRepository.getAll(pageable, idCliente);
+        funcao.verficarDadosPage(emprestimos, "emprestimo.naoEncontrado");
+        return emprestimos;
+    }
+
+    public EmprestimoDto buscarEmprestimo(Long idCliente, Long id){
+        funcao.verificarCliente(idCliente);
+        EmprestimoDto emprestimo = emprestimoRepository.buscar(idCliente, id);
+        funcao.verficarEmprestimo(id, "emprestimo.naoExist");
+        return emprestimo;
     }
 
     public EmprestimoDto save(EmprestimoFormDto emprestimoFormDto, Long idCliente){
         Cliente cliente = modelMapper.map(clienteService.getById(idCliente), Cliente.class);
         Emprestimo emprestimo = modelMapper.map(emprestimoFormDto, Emprestimo.class);
 
-        if(emprestimo.getQuantidadeParcelas() > 60){
-            throw new RegraDeNegocioException("parcela.ultrapassada");
-        }
-
         emprestimo.setEmissao(LocalDate.now());
 
-        verificarData(emprestimo.getEmissao(), emprestimo.getDataPrimeiraParcela());
+        funcao.verificarQuantidadeParcelas(emprestimo.getQuantidadeParcelas());
+        funcao.verificarData(emprestimo.getEmissao(), emprestimo.getDataPrimeiraParcela());
 
         emprestimo.setStatus(StatusEmprestimoEnum.ANALISE);
         emprestimo.setCliente(cliente);
@@ -56,24 +66,5 @@ public class EmprestimoService {
         EmprestimoDto emprestimoDto = modelMapper.map(emprestimoRepository.save(emprestimo), EmprestimoDto.class);
         return emprestimoDto;
     }
-
-    Boolean verificarData(LocalDate dataEmissao, LocalDate PrimeiraParcela){
-        Calendar cal = Calendar.getInstance();
-        Date date = modelMapper.map(dataEmissao, Date.class);
-
-        cal.setTime(date);
-        cal.add(Calendar.MONTH, 3);
-        date = cal.getTime();
-
-        LocalDate dataConvert = date.toInstant().atZone( ZoneId.systemDefault()).toLocalDate();
-        LocalDate dataPrimeiraParcela = PrimeiraParcela;
-
-        if(dataPrimeiraParcela.isAfter(dataConvert)){
-            throw new RegraDeNegocioException("parcela.dataPrimeiraParcela");
-        }
-
-        return false;
-    }
-
 
 }
