@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,14 +21,17 @@ import org.springframework.web.bind.annotation.*;
 public class CadastrarClienteController {
 
     private CadastrarClienteService cadastrarClienteService;
+    private PasswordEncoder encoder;
 
     @Autowired
-    public CadastrarClienteController(CadastrarClienteService cadastrarClienteService) {
+    public CadastrarClienteController(CadastrarClienteService cadastrarClienteService, PasswordEncoder encoder) {
         this.cadastrarClienteService = cadastrarClienteService;
+        this.encoder = encoder;
     }
 
     @PostMapping
     public ResponseEntity<CadastrarClienteDto> cadastrar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
+        cadastrarClienteFormDto.getCliente().setSenha(encoder.encode(cadastrarClienteFormDto.getCliente().getSenha()));
         return ResponseEntity.ok(cadastrarClienteService.save(cadastrarClienteFormDto));
     }
 }

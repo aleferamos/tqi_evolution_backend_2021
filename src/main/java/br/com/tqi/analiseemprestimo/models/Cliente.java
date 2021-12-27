@@ -1,5 +1,6 @@
 package br.com.tqi.analiseemprestimo.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,6 +33,7 @@ public class Cliente {
     private String renda;
 
     @Column(name = "senha")
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private String senha;
 
     @ManyToOne

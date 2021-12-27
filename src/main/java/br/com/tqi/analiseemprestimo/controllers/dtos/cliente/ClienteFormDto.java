@@ -1,6 +1,7 @@
 package br.com.tqi.analiseemprestimo.controllers.dtos.cliente;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoDto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 

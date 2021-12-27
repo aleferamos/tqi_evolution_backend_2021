@@ -31,4 +31,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             "WHERE (cliente.email = :email) " +
             "AND (cliente.id <> :id OR :id IS NULL)")
     Boolean existEmail(@Param(value = "email") String email, @Param(value="id") Long id);
+
+    public Optional<Cliente> findByEmail(String email);
 }
