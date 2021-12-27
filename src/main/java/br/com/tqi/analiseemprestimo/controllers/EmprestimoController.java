@@ -8,8 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.net.URI;
 
 @RestController
 @RequestMapping("cliente/{idCliente}/emprestimo")
@@ -28,8 +30,10 @@ public class EmprestimoController {
     }
 
     @PostMapping("/novo")
-    public ResponseEntity<EmprestimoDto> solicitar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto, @PathVariable(value = "idCliente") Long idCliente){
-        return ResponseEntity.ok(emprestimoService.save(emprestimoFormDto, idCliente));
+    public ResponseEntity<Long> solicitar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto, @PathVariable(value = "idCliente") Long idCliente){
+        EmprestimoDto emprestimo = emprestimoService.save(emprestimoFormDto, idCliente);
+        URI uri = UriComponentsBuilder.fromPath("/novo").buildAndExpand(emprestimo.getId()).toUri();
+        return ResponseEntity.created(uri).body(emprestimo.getId());
     }
 
     @GetMapping("/detalhe/{codigoEmprestimo}")

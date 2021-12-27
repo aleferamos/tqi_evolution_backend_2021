@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @ApiOperation(value = "Cadastra um cliente")
@@ -30,8 +33,10 @@ public class CadastrarClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<CadastrarClienteDto> cadastrar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
+    public ResponseEntity<Long> cadastrar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
         cadastrarClienteFormDto.getCliente().setSenha(encoder.encode(cadastrarClienteFormDto.getCliente().getSenha()));
-        return ResponseEntity.ok(cadastrarClienteService.save(cadastrarClienteFormDto));
+        CadastrarClienteDto cliente = cadastrarClienteService.save(cadastrarClienteFormDto);
+        URI uri = UriComponentsBuilder.fromPath("emails/{id}").buildAndExpand(cliente.getCliente().getId()).toUri();
+        return ResponseEntity.created(uri).body(cliente.getCliente().getId());
     }
 }
