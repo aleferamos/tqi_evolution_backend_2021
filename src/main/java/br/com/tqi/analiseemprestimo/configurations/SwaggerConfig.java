@@ -1,7 +1,5 @@
 package br.com.tqi.analiseemprestimo.configurations;
 
-import com.google.common.net.HttpHeaders;
-import io.swagger.models.auth.In;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.*;

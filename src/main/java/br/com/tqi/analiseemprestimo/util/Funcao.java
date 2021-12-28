@@ -1,10 +1,8 @@
 package br.com.tqi.analiseemprestimo.util;
 
-import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.repositories.EmprestimoRepository;
 import br.com.tqi.analiseemprestimo.services.ClienteService;
-import br.com.tqi.analiseemprestimo.services.EmprestimoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -2,7 +2,6 @@ package br.com.tqi.analiseemprestimo.services;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoFormDto;
-import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.models.Endereco;
 import br.com.tqi.analiseemprestimo.repositories.EnderecoRepository;
 import org.modelmapper.ModelMapper;

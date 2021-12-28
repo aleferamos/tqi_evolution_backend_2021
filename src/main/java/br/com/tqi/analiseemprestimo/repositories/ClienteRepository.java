@@ -1,7 +1,6 @@
 package br.com.tqi.analiseemprestimo.repositories;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
-import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteFormDto;
 import br.com.tqi.analiseemprestimo.models.Cliente;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

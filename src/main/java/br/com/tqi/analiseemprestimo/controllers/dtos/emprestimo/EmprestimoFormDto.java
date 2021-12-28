@@ -1,6 +1,5 @@
 package br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo;
 
-import br.com.tqi.analiseemprestimo.util.Enums.Emprestimo.StatusEmprestimoEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;

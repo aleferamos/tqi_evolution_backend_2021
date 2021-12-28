@@ -2,7 +2,6 @@ package br.com.tqi.analiseemprestimo.services;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoFormDto;
-import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.models.Cliente;
 import br.com.tqi.analiseemprestimo.models.Emprestimo;
 import br.com.tqi.analiseemprestimo.repositories.EmprestimoRepository;
@@ -15,11 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-
-import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.Date;
-
 
 @Service
 public class EmprestimoService {
