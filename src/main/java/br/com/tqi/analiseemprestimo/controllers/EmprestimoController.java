@@ -6,6 +6,7 @@ import br.com.tqi.analiseemprestimo.services.EmprestimoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -25,7 +26,7 @@ public class EmprestimoController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<Page<EmprestimoDto>> listarEmprestimos(Pageable pageable,
+    public ResponseEntity<Page<EmprestimoDto>> listarEmprestimos(@PageableDefault(sort = {"emissao"}) Pageable pageable,
                                                                  @PathVariable(value = "idCliente") Long idCliente){
         return ResponseEntity.ok(emprestimoService.listarEmprestimos(pageable, idCliente));
     }
