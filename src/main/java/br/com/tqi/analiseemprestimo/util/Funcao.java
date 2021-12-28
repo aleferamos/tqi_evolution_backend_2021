@@ -1,11 +1,14 @@
 package br.com.tqi.analiseemprestimo.util;
 
+import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.repositories.EmprestimoRepository;
 import br.com.tqi.analiseemprestimo.services.ClienteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -77,6 +80,28 @@ public class Funcao {
        if(emprestimo.isEmpty()){
            throw new RegraDeNegocioException(mensagem);
        }
+        return false;
+    }
+
+    public ClienteDto obterClienteAutenticado(){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String nome;
+
+        if(principal instanceof UserDetails){
+            nome = ((UserDetails)principal).getUsername();
+        } else {
+            nome = principal.toString();
+        }
+        ClienteDto cliente = clienteService.getByEmail(nome);
+
+        return cliente;
+    }
+
+    public Boolean RestringirRequisicao(Long idCliente, Long idClienteLogado, String mensagem){
+        if(idCliente != idClienteLogado){
+            throw new RegraDeNegocioException(mensagem);
+        }
         return false;
     }
 }

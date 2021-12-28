@@ -44,4 +44,10 @@ public class ClienteService {
         ClienteDto clienteConvert = modelMapper.map(cliente, ClienteDto.class);
         return clienteConvert;
     }
+
+    public ClienteDto getByEmail(String email){
+        Cliente cliente = clienteRepository.findByEmail(email).orElseThrow(() -> new RegraDeNegocioException("cliente.naoEncontrado"));
+        ClienteDto clienteConvert = modelMapper.map(cliente, ClienteDto.class);
+        return clienteConvert;
+    }
 }
