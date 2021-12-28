@@ -30,7 +30,8 @@ public class EmprestimoService {
     private Funcao funcao;
 
     @Autowired
-    public EmprestimoService(EmprestimoRepository emprestimoRepository, ClienteService clienteService, ModelMapper modelMapper, Funcao funcao) {
+    public EmprestimoService(EmprestimoRepository emprestimoRepository, ClienteService clienteService,
+                             ModelMapper modelMapper, Funcao funcao) {
         this.emprestimoRepository = emprestimoRepository;
         this.clienteService = clienteService;
         this.modelMapper = modelMapper;

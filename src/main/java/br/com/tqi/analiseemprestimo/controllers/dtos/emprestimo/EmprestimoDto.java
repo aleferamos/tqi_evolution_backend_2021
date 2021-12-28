@@ -37,7 +37,8 @@ public class EmprestimoDto {
     public EmprestimoDto() {
     }
 
-    public EmprestimoDto(Long id, LocalDate emissao, LocalDate dataPrimeiraParcela, Long quantidadeParcelas, StatusEmprestimoEnum status, Cliente cliente) {
+    public EmprestimoDto(Long id, LocalDate emissao, LocalDate dataPrimeiraParcela, Long quantidadeParcelas,
+                         StatusEmprestimoEnum status, Cliente cliente) {
         this.id = id;
         this.emissao = emissao;
         this.dataPrimeiraParcela = dataPrimeiraParcela;
@@ -53,7 +54,8 @@ public class EmprestimoDto {
         this.status = status;
     }
 
-    public EmprestimoDto(Long id, String valor, Long quantidadeParcelas, LocalDate dataPrimeiraParcela, StatusEmprestimoEnum status ,Cliente cliente) {
+    public EmprestimoDto(Long id, String valor, Long quantidadeParcelas, LocalDate dataPrimeiraParcela,
+                         StatusEmprestimoEnum status ,Cliente cliente) {
         this.codigoEmprestimo = id;
         this.valor = valor;
         this.quantidadeParcelas = quantidadeParcelas;

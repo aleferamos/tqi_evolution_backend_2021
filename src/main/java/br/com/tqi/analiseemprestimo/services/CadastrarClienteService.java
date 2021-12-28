@@ -21,7 +21,8 @@ public class CadastrarClienteService {
     private ModelMapper modelMapper;
 
     @Autowired
-    public CadastrarClienteService(ClienteService clienteService, EnderecoService enderecoService, ModelMapper modelMapper) {
+    public CadastrarClienteService(ClienteService clienteService, EnderecoService enderecoService,
+                                   ModelMapper modelMapper) {
         this.clienteService = clienteService;
         this.enderecoService = enderecoService;
         this.modelMapper = modelMapper;

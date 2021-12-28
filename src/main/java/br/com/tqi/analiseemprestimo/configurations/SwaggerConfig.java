@@ -53,7 +53,8 @@ public class SwaggerConfig {
                 .version("v1.0")
                 .license("")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                        .contact(new Contact("Alefe", "https://github.com/aleferamos/tqi_evolution_backend_2021", "alefepdias@gmail.com"))
+                        .contact(new Contact("Alefe",
+                        "https://github.com/aleferamos/tqi_evolution_backend_2021", "alefepdias@gmail.com"))
                         .build();
     }
 

@@ -40,7 +40,8 @@ public class ClienteService {
     }
 
     public ClienteDto getById(Long id){
-        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RegraDeNegocioException("cliente.naoEncontrado"));
+        Cliente cliente = clienteRepository.findById(id)
+                .orElseThrow(() -> new RegraDeNegocioException("cliente.naoEncontrado"));
         ClienteDto clienteConvert = modelMapper.map(cliente, ClienteDto.class);
         return clienteConvert;
     }

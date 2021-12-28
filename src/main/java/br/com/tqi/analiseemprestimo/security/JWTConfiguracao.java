@@ -39,7 +39,9 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
             "/webjars/**",
             // -- Swagger UI v3 (OpenAPI)
             "/v3/api-docs/**",
-            "/swagger-ui/**"
+            "/swagger-ui/**",
+            "/cadastro-cliente/**",
+            "/login/**"
             // other public endpoints of your API may be appended to this array
     };
 
