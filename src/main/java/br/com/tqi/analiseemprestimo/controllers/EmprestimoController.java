@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("cliente/{idCliente}/emprestimo")
+@RequestMapping("emprestimo")
 public class EmprestimoController {
 
     private EmprestimoService emprestimoService;
@@ -28,22 +28,20 @@ public class EmprestimoController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<Page<EmprestimoDto>> listarEmprestimos(@PageableDefault(sort = {"emissao"}) Pageable pageable,
-                                                                 @PathVariable(value = "idCliente") Long idCliente){
-        return ResponseEntity.ok(emprestimoService.listarEmprestimos(pageable, idCliente));
+    public ResponseEntity<Page<EmprestimoDto>> listarEmprestimos(@PageableDefault(sort = {"emissao"}) Pageable pageable
+    ){
+        return ResponseEntity.ok(emprestimoService.listarEmprestimos(pageable));
     }
 
     @PostMapping("/novo")
-    public ResponseEntity<Long> solicitar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto,
-                                          @PathVariable(value = "idCliente") Long idCliente){
-        EmprestimoDto emprestimo = emprestimoService.save(emprestimoFormDto, idCliente);
+    public ResponseEntity<Long> solicitar(@RequestBody @Valid EmprestimoFormDto emprestimoFormDto){
+        EmprestimoDto emprestimo = emprestimoService.save(emprestimoFormDto);
         URI uri = UriComponentsBuilder.fromPath("/novo").buildAndExpand(emprestimo.getId()).toUri();
         return ResponseEntity.created(uri).body(emprestimo.getId());
     }
 
     @GetMapping("/detalhe/{codigoEmprestimo}")
-    public ResponseEntity<EmprestimoDto> buscarDetalhes(@PathVariable(value = "idCliente") Long idCliente,
-                                                        @PathVariable(value = "codigoEmprestimo") Long idEmprestimo){
-        return ResponseEntity.ok(emprestimoService.buscarEmprestimo(idCliente, idEmprestimo));
+    public ResponseEntity<EmprestimoDto> buscarDetalhes(@PathVariable(value = "codigoEmprestimo") Long idEmprestimo){
+        return ResponseEntity.ok(emprestimoService.buscarEmprestimo(idEmprestimo));
     }
 }

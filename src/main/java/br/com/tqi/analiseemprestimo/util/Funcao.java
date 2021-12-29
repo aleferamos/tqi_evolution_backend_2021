@@ -1,6 +1,7 @@
 package br.com.tqi.analiseemprestimo.util;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.cliente.ClienteDto;
+import br.com.tqi.analiseemprestimo.controllers.dtos.emprestimo.EmprestimoDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.repositories.EmprestimoRepository;
 import br.com.tqi.analiseemprestimo.services.ClienteService;
@@ -56,11 +57,6 @@ public class Funcao {
         return false;
     }
 
-    public Boolean verificarCliente(Long idCliente){
-        clienteService.getById(idCliente);
-        return false;
-    }
-
     public Boolean verficarDadosPage(Page<?> dados, String mensagem){
         if(dados.getTotalElements() < 1){
             throw new RegraDeNegocioException(mensagem);
@@ -75,9 +71,8 @@ public class Funcao {
         return false;
     }
 
-    public Boolean verficarEmprestimo(Long id, String mensagem){
-       var emprestimo =  emprestimoRepository.findById(id);
-       if(emprestimo.isEmpty()){
+    public Boolean verficarEmprestimo(EmprestimoDto emprestimo, String mensagem){
+       if(emprestimo == null){
            throw new RegraDeNegocioException(mensagem);
        }
         return false;
@@ -98,10 +93,4 @@ public class Funcao {
         return cliente;
     }
 
-    public Boolean RestringirRequisicao(Long idCliente, Long idClienteLogado, String mensagem){
-        if(idCliente != idClienteLogado){
-            throw new RegraDeNegocioException(mensagem);
-        }
-        return false;
-    }
 }
