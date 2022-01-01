@@ -47,7 +47,8 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
             "/v3/api-docs/**",
             "/swagger-ui/**",
             "/cadastro-cliente/**",
-            "/login"
+            "/login",
+            "/autenticacao/**"
             // other public endpoints of your API may be appended to this array
     };
 

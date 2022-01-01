@@ -3,6 +3,7 @@ package br.com.tqi.analiseemprestimo.security;
 import br.com.tqi.analiseemprestimo.data.DetalheClienteData;
 import br.com.tqi.analiseemprestimo.models.Cliente;
 import com.auth0.jwt.JWT;
+import io.jsonwebtoken.Jwts;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +23,7 @@ import java.util.Date;
 public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
 
     public static final int TOKEN_EXPIRACAO = 3600000;
-    public static final String TOKEN_SENHA = "24dbd9ca-c96f-4659-8400-f8ebf9793adc";
+    public static final String TOKEN_SENHA = "dDxEXd5saEGeqrBpZfhEnw==";
 
     private final AuthenticationManager authenticationManager;
 
@@ -63,4 +64,7 @@ public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
         response.getWriter().write(token);
         response.getWriter().flush();
     }
+
+
+
 }
