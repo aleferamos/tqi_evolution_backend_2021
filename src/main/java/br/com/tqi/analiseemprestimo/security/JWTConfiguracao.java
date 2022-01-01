@@ -1,6 +1,7 @@
 package br.com.tqi.analiseemprestimo.security;
 
 import br.com.tqi.analiseemprestimo.services.DetalheClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,7 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.Collections;
+
 
 @EnableWebSecurity
 public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
@@ -17,6 +23,7 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
     private final DetalheClienteService clienteService;
     private final PasswordEncoder passwordEncoder;
 
+    @Autowired
     public JWTConfiguracao(DetalheClienteService clienteService, PasswordEncoder passwordEncoder) {
         this.clienteService = clienteService;
         this.passwordEncoder = passwordEncoder;
@@ -40,7 +47,7 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
             "/v3/api-docs/**",
             "/swagger-ui/**",
             "/cadastro-cliente/**",
-            "/login/**"
+            "/login"
             // other public endpoints of your API may be appended to this array
     };
 
@@ -53,15 +60,21 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
                 .and()
                 .addFilter(new JWTAutenticarFilter(authenticationManager()))
                 .addFilter(new JWTValidarFilter(authenticationManager()))
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().cors();
+
     }
 
     @Bean
-    UrlBasedCorsConfigurationSource corsConfigurationSource(){
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    CorsConfigurationSource corsConfigurationSource(){
+        CorsConfiguration configuration = new CorsConfiguration();
 
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        source.registerCorsConfiguration("/**", corsConfiguration);
+        configuration.setAllowedOrigins(Collections.singletonList("*"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Collections.singletonList("*"));
+
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
 
         return source;
     }

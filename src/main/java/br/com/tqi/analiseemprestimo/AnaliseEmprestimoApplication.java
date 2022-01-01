@@ -21,4 +21,5 @@ public class AnaliseEmprestimoApplication {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		return encoder;
 	}
+
 }
