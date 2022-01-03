@@ -55,7 +55,6 @@ public class EmprestimoService {
 
         funcao.verificarQuantidadeParcelas(emprestimo.getQuantidadeParcelas());
         funcao.verificarData(emprestimo.getEmissao(), emprestimo.getDataPrimeiraParcela());
-
         emprestimo.setStatus(StatusEmprestimoEnum.ANALISE);
         emprestimo.setCliente(cliente);
 

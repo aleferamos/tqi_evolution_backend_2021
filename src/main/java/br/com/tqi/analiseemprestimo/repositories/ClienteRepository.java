@@ -31,5 +31,5 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             "AND (cliente.id <> :id OR :id IS NULL)")
     Boolean existEmail(@Param(value = "email") String email, @Param(value="id") Long id);
 
-    public Optional<Cliente> findByEmail(String email);
+    Optional<Cliente> findByEmail(String email);
 }
