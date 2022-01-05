@@ -23,7 +23,6 @@ public class AutenticacaoController {
     @PostMapping(value = "/validar")
     public ResponseEntity<Boolean> tokenIsValid(@RequestBody TokenValidDto token){
         Boolean tokenValid = autenticacaoService.isTokenValid(token.getToken());
-        System.out.println(tokenValid);
         return ResponseEntity.ok(tokenValid);
     }
 }
