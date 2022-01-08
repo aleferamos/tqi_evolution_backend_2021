@@ -2,6 +2,7 @@ package br.com.tqi.analiseemprestimo.controllers;
 
 import br.com.tqi.analiseemprestimo.controllers.dtos.cadastrarCliente.CadastrarClienteDto;
 import br.com.tqi.analiseemprestimo.controllers.dtos.cadastrarCliente.CadastrarClienteFormDto;
+import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import br.com.tqi.analiseemprestimo.services.CadastrarClienteService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -34,6 +35,9 @@ public class CadastrarClienteController {
 
     @PostMapping
     public ResponseEntity<Long> cadastrar(@RequestBody CadastrarClienteFormDto cadastrarClienteFormDto){
+        if(cadastrarClienteFormDto.getCliente().getSenha().isBlank()){
+            throw new RegraDeNegocioException("cliente.campoVazio");
+        }
         cadastrarClienteFormDto.getCliente().setSenha(encoder.encode(cadastrarClienteFormDto.getCliente().getSenha()));
         CadastrarClienteDto cliente = cadastrarClienteService.save(cadastrarClienteFormDto);
         URI uri = UriComponentsBuilder.fromPath("emails/{id}").buildAndExpand(cliente.getCliente().getId()).toUri();

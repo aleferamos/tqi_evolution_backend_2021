@@ -9,6 +9,7 @@ import br.com.tqi.analiseemprestimo.controllers.dtos.endereco.EnderecoFormDto;
 import br.com.tqi.analiseemprestimo.exceptions.RegraDeNegocioException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -30,6 +31,8 @@ public class CadastrarClienteService {
 
     @Transactional
     public CadastrarClienteDto save(CadastrarClienteFormDto cadastrarClienteFormDto){
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
         if(isEmpty(cadastrarClienteFormDto)){
             throw new RegraDeNegocioException("cliente.campoVazio");
         }
@@ -52,13 +55,12 @@ public class CadastrarClienteService {
     }
 
     Boolean isEmpty (CadastrarClienteFormDto cadastrarClienteFormDto){
-        Boolean isEmpty = false;
+        boolean isEmpty = false;
         if(cadastrarClienteFormDto.getCliente().getNome().isBlank()
                 || cadastrarClienteFormDto.getCliente().getEmail().isBlank()
                 || cadastrarClienteFormDto.getCliente().getCpf().isBlank()
                 || cadastrarClienteFormDto.getCliente().getRg().isBlank()
                 || cadastrarClienteFormDto.getCliente().getRenda().isBlank()
-                || cadastrarClienteFormDto.getCliente().getSenha().isBlank()
                 || cadastrarClienteFormDto.getEndereco().getApelido().isBlank()
                 || cadastrarClienteFormDto.getEndereco().getRua().isBlank()
                 || cadastrarClienteFormDto.getEndereco().getNumero().isBlank()
