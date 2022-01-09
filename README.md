@@ -45,4 +45,4 @@ O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiên
 <img src="https://i.imgur.com/oQ90uE1.png">
 
 _____________________________________________________________________________________________________________________________________________________________
-<h4> Requisições </h4>
+<h4> Requisições :traffic_light:</h4>
