@@ -88,7 +88,7 @@ Algumas imagens estão embaçadas acima, basta dar um zoom no navegador pra ver 
 <h4> Como fazer as requisições? </h4>
 
 Deixei um arquivo no formato de postman no link abaixo <br>
-https://www.4shared.com/s/fFSGAKs0Zea
+https://www.4shared.com/s/fnM50oUAUea
 
 1. Acesse o postman, e no workspace clique em import.
 <img src="https://i.imgur.com/tsffQwK.png">
