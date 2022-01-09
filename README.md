@@ -70,3 +70,15 @@ Fiz alguns diagramas de processo de cada requisição no modelo BPMN <br>
 
 <h3> Autenticar </h3>
 <img src="https://i.imgur.com/tS2gnHF.jpeg">
+
+<h3> Listar Emprestimos </h3>
+<img src="https://i.imgur.com/pdP5s1Q.jpg">
+
+<h3> Solicitar Emprestimo </h3>
+<img src="https://i.imgur.com/T5zetyT.jpg">
+
+<h3> Detalhar Emprestimo </h3>
+<img src="https://i.imgur.com/HgPzDqs.jpg">
+
+<h3> Verificar validade da token </h3>
+<img src="https://i.imgur.com/hioUvLr.jpg">
