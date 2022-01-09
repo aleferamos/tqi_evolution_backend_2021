@@ -31,4 +31,4 @@ Ponto chave - Token :key: <br>
 A aplicação foi projetado com JWT (java web token)
 Esse é um tipo de autenticação onde caso você insira o email e senha que consta de um cliente no banco de dados, é gerado um token (uma sequência de letras, números e pontos) que a própria lógica da apliação verifica que esse token consta na secret da aplicação (uma senha onde guarda todos tokens gerados) e verifica se o token ainda não ta expirado, pois o token tme um tempo de expiração que você define e isso é como se foce uma sessão na aplicação. 
 <h5>Previlégios :lock:</h5>
-A aplicação foi programada de uma forma que para fazer as requisições é necessário autenticar, e autenticando, todos os registros buscas e tudo, será apenas do cliente que foi autenticado, você não terá permissão de verficar dados ou registros ou registrar dados em outros clientes.
+A aplicação foi programada de uma forma que para fazer as requisições é necessário autenticar, e autenticando, todos os registros, buscas e tudo, será apenas do cliente que foi autenticado, você não terá permissão de verficar dados, registros ou registrar dados em outros clientes.
