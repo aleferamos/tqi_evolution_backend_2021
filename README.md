@@ -53,3 +53,16 @@ Como uma Api é composta por requisições, a aplicação consta com alguns requ
 Na imagem o número 1 referece a requisição de cadastro, onde você pode mandar um corpo com todos os atributos a ser cadastrados, note: é obrigatorio a inserir os atributos e o valor, pois a aplicação está programada a não aceitar valores vazios, caso você cadastrou, você terá que fazer a requisição do número 2, que se refere a requisição de autenticar na aplicação com o email e senha que o cliente foi criado, após isso é possivel fazer requisições sobre emprestimo no sistema. Como vemos na imagem temos a sessão Autenticação e lá tem a requisição para validar o token, cuja requisição não é utilizado pelo cliente e sim para uma demonstração de como funciona essa função de validação de token.<br>
 
 Vamos para melhor parte, acima falamos sobre o nome das requisições, agora vamos para os end-points.
+
+Cadastrar Cliente - /cadastro-cliente
+Autenticar - /login
+
+Listar emprestimos - /emprestimo/todos
+Solicitar Emprestimo - /emprestimo/novo
+Obter Detalhe de Emprestimo - /emprestimo/detalhe/{{idEmprestimo}} exemplo : /emprestimo/detalhe/11
+
+_____________________________________________________________________________________________________________________________________________________________
+<h4>Diagramas de processo BPMN</h4>
+
+
+
