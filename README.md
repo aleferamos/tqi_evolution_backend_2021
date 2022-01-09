@@ -15,3 +15,10 @@ ________________________________________________________________________________
 A aplicação uma api rest e é separada em camadas, sendo elas: model, repository, service, controller.
 onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde fica os métodos de persistência, e que por si já vem com métodos para poder facilitar a persistência. A camada service é a camada onde fica as regras de negócios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
 
+<h4>Contexto</h4>
+Foi criado uma solução para uma empresa de empréstimos e precisa de um sistema de análise de crédito cuja as funções são:
+Cadastro de cliente <br>
+Autenticação <br>
+Solicitação de empréstimo <br>
+Acompanhamento das solicitações de empréstimo <br> 
+Detalhar o emprestimo
