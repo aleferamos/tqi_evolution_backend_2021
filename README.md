@@ -24,5 +24,5 @@ Acompanhamento das solicitações de empréstimo :iphone:<br>
 Detalhar o emprestimo :mag:
 <h5>Excessões :stop_sign:</h5> 
 
-Na parte de cadastro de cliente o email a ser cadastrado não pode já constar no banco de dados <br>
+Na parte de cadastro de cliente o email a ser cadastrado não pode já constar no banco de dados. <br>
 Na parte de do cadastro do emprestimo, o maximo de quantidade de parcelas é 60, e a data da cobrança da primeira parcela pode ser no maximo até 3 meses
