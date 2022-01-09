@@ -5,4 +5,4 @@ Linguagem
 <img src="https://svgshare.com/i/dPV.svg" width="50px">
 
 FrameWork
-<img src="https://svgshare.com/i/dN3.svg" style="margin-left:35em" width="35px">
+<img src="https://svgshare.com/i/dN3.svg" width="35px">
