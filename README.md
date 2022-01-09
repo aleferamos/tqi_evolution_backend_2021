@@ -88,7 +88,7 @@ Algumas imagens estão embaçadas acima, basta dar um zoom no navegador pra ver 
 <h4> Como fazer as requisições? </h4>
 
 Deixei um arquivo no formato de postman no link abaixo <br>
-https://www.4shared.com/s/fzItN1Ih4ea
+https://www.4shared.com/s/fFSGAKs0Zea
 
 1. Acesse o postman, e no workspace clique em import.
 <img src="https://i.imgur.com/tsffQwK.png">
@@ -116,4 +116,6 @@ https://www.4shared.com/s/fzItN1Ih4ea
 
 9. Como no passo anterior pegamos o valor do codigoEmprestimo, iremos utilizar para ver o detalhamento do emprestimo, clique em Obter Detalhe do emprestimo, insira o codigo emprestimo após a barra como na imagem exemplo : /emprestimo/detalhe/11 e clique em send.
 <img src="https://i.ibb.co/280syP6/image.png">
+
+Com isso podemos também fazer os testes de excessões como mostado nos diagramas de processo, e com isso finalizamos as requisições. Note: essas requisões não funciona apenas em postman mas em todos aplicativos de requisições.
 
