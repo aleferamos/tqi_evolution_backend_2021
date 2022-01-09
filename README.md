@@ -95,3 +95,6 @@ https://www.4shared.com/s/fzItN1Ih4ea
 
 2. Clique em Upload Files e selecione o arquivo.
 <img src="https://i.imgur.com/sNPE6xb.png">
+
+3. Primeiro clique em cadastrar cliente, preencha os atributos do corpo da requisição e clique em send.
+<img src="https://i.imgur.com/ddhvPHh.png">
