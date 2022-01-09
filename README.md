@@ -12,5 +12,5 @@ Banco de dados
 ______________________________________________________________________________________________________________________________________________________________
 Um pouco sobre a aplicação 	:technologist:<br/><br/>
 A aplicação uma api rest e é separada em camadas, sendo elas: model, repository, service, controller.
-onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde fica os metodos cruds e mais alguns para facilitar
+onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde fica os metodos de persistência, e que por si já vem com metodos para poder facilitar a persistência. A camada service é a camada onde fica as regras de negocios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
 
