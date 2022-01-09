@@ -91,6 +91,7 @@ Deixei um arquivo no formato de postman no link abaixo <br>
 https://www.4shared.com/s/fzItN1Ih4ea
 
 1. Acesse o postman, e no workspace clique em import.
-2. <img src="https://i.imgur.com/tsffQwK.png">
+<img src="https://i.imgur.com/tsffQwK.png">
 
-
+2. Clique em Upload Files e selecione o arquivo.
+<img src="https://i.imgur.com/sNPE6xb.png">
