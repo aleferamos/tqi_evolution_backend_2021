@@ -9,3 +9,7 @@ FrameWork
 
 Banco de dados
 <img src="https://svgshare.com/i/dNy.svg" width="35px">
+
+A aplicação uma api rest e é separada em camadas, sendo elas: model, repository, service, controller.
+onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde fica os metodos cruds e mais alguns para facilitar
+
