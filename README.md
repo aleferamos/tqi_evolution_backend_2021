@@ -82,3 +82,7 @@ Fiz alguns diagramas de processo de cada requisição no modelo BPMN <br>
 
 <h3> Verificar validade da token </h3>
 <img src="https://i.imgur.com/hioUvLr.jpg">
+
+Algumas imagens estão embaçadas acima, basta dar um zoom no navegador pra ver mellhor.
+
+<h4> Como fazer as requisições? </h4>
