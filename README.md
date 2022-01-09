@@ -28,6 +28,7 @@ Na parte de cadastro de cliente o email a ser cadastrado não pode já constar n
 Na parte de do cadastro do emprestimo, o maximo de quantidade de parcelas é 60, e a data da cobrança da primeira parcela pode ser no maximo até 3 meses
 ______________________________________________________________________________________________________________________________________________________________
 <h5>Ponto chave - Token :key:</5> <br>
+
 A aplicação foi projetado com JWT (java web token)
 Esse é um tipo de autenticação onde caso você insira o email e senha que consta de um cliente no banco de dados, é gerado um token (uma sequência de letras, números e pontos) que a própria lógica da apliação verifica que esse token consta na secret da aplicação (uma senha onde guarda todos tokens gerados) e verifica se o token ainda não ta expirado, pois o token tme um tempo de expiração que você define e isso é como se foce uma sessão na aplicação. 
 <h5>Previlégios :lock:</h5>
