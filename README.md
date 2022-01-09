@@ -18,7 +18,7 @@ onde model é a camada de modelo, onde é definido o nome do objeto e seus atrib
 <h4>Contexto</h4>
 Foi criado uma solução para uma empresa de empréstimos e precisa de um sistema de análise de crédito cuja as funções são: <br>
 Cadastro de cliente :pouting_face:<br>
-Autenticação <br>
+Autenticação :key:<br>
 Solicitação de empréstimo <br>
 Acompanhamento das solicitações de empréstimo <br> 
 Detalhar o emprestimo
