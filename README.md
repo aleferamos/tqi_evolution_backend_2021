@@ -20,5 +20,5 @@ Foi criado uma solução para uma empresa de empréstimos e precisa de um sistem
 Cadastro de cliente :pouting_face:<br>
 Autenticação :key:<br>
 Solicitação de empréstimo :man_dancing:<br>
-Acompanhamento das solicitações de empréstimo <br> 
-Detalhar o emprestimo
+Acompanhamento das solicitações de empréstimo :iphone:<br> 
+Detalhar o emprestimo :mag:
