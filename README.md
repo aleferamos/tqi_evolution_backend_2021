@@ -3,4 +3,4 @@ Desafio TQI - análise de crédito
 
 Linguagem
 
-<img src="https://svgshare.com/s/dPz" width="50px">
+<img src="https://svgshare.com/i/dPz.svg" width="50px">
