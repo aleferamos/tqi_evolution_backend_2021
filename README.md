@@ -36,3 +36,10 @@ A aplicação foi programada de uma forma que para fazer as requisições é nec
 
 <h5> Esquema </h5>
 <img src="https://i.imgur.com/g6rGRNL.jpeg">
+
+______________________________________________________________________________________________________________________________________________________________
+<h4> Banco de dados </h4>
+O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiência, na aplicação existe 3 entidades, sendo elas: cliente, emprestimo, endereco.
+
+<h5> Esquema </h5>
+<img src="https://i.imgur.com/oQ90uE1.png">
