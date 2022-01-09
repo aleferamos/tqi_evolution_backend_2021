@@ -21,7 +21,7 @@ Cadastro de cliente :pouting_face:<br>
 Autenticação :key:<br>
 Solicitação de empréstimo :man_dancing:<br>
 Acompanhamento das solicitações de empréstimo :iphone:<br> 
-Detalhar o emprestimo :mag:
+Detalhar o emprestimo :mag: <br>
 
 O mesmo apresenta algumas excessões :stop_sign:, sendo elas: <br>
 Na parte de cadastro de cliente o email a ser cadastrado não pode já constar no banco de dados <br>
