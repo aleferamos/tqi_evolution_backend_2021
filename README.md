@@ -68,4 +68,5 @@ Fiz alguns diagramas de processo de cada requisição no modelo BPMN <br>
 <h3> Cadastro de cliente </h3>
 <img src="https://i.imgur.com/LTkkELX.jpeg">
 
-
+<h3> Autenticar </h3>
+<img src="https://i.imgur.com/tS2gnHF.jpeg">
