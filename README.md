@@ -106,4 +106,7 @@ https://www.4shared.com/s/fzItN1Ih4ea
 <img src="https://i.imgur.com/92I3K5e.png">
 
 6. Clique no icone do olho e em token clique no lapis, cole a token e de enter, a partir dai você poderá fazer as requisições.
-7. <img src="https://i.ibb.co/zH2WZNV/image.png">
+<img src="https://i.ibb.co/zH2WZNV/image.png">
+
+7. Clique na aba Emprestimo e depois clique em Solicitar emprestimo, preencha os atributos do corpo da requisição e clique em send, preencha novamente com outros dados o emprestimo e clique em send para ficar mais de 1 emprestimo para testes.
+<img src="https://i.ibb.co/qg2LzZ5/image.png">
