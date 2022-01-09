@@ -104,3 +104,6 @@ https://www.4shared.com/s/fzItN1Ih4ea
 
 5. Copie o token gerado
 <img src="https://i.imgur.com/92I3K5e.png">
+
+6. Clique no icone do olho e em token clique no lapis, cole a token e de enter, a partir dai você poderá fazer as requisições.
+7. <img src="https://i.ibb.co/zH2WZNV/image.png">
