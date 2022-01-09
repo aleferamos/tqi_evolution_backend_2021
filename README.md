@@ -54,11 +54,11 @@ Na imagem o número 1 referece a requisição de cadastro, onde você pode manda
 
 Vamos para melhor parte, acima falamos sobre o nome das requisições, agora vamos para os end-points.
 
-Cadastrar Cliente - /cadastro-cliente
-Autenticar - /login
+Cadastrar Cliente - /cadastro-cliente <br>
+Autenticar - /login <br>
 
-Listar emprestimos - /emprestimo/todos
-Solicitar Emprestimo - /emprestimo/novo
+Listar emprestimos - /emprestimo/todos <br>
+Solicitar Emprestimo - /emprestimo/novo <br>
 Obter Detalhe de Emprestimo - /emprestimo/detalhe/{{idEmprestimo}} exemplo : /emprestimo/detalhe/11
 
 _____________________________________________________________________________________________________________________________________________________________
