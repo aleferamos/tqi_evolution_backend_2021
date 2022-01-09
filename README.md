@@ -89,3 +89,8 @@ Algumas imagens estão embaçadas acima, basta dar um zoom no navegador pra ver 
 
 Deixei um arquivo no formato de postman no link abaixo <br>
 https://www.4shared.com/s/fzItN1Ih4ea
+
+1. Acesse o postman, e no workspace clique em import.
+2. <img src="https://i.imgur.com/tsffQwK.png">
+
+
