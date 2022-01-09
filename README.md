@@ -86,3 +86,6 @@ Fiz alguns diagramas de processo de cada requisição no modelo BPMN <br>
 Algumas imagens estão embaçadas acima, basta dar um zoom no navegador pra ver mellhor.
 
 <h4> Como fazer as requisições? </h4>
+
+Deixei um arquivo no formato de postman no link abaixo <br>
+https://www.4shared.com/s/fzItN1Ih4ea
