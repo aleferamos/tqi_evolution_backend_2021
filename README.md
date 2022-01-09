@@ -63,6 +63,8 @@ Obter Detalhe de Emprestimo - /emprestimo/detalhe/{{idEmprestimo}} exemplo : /em
 
 _____________________________________________________________________________________________________________________________________________________________
 <h4>Diagramas de processo BPMN</h4>
+Fiz alguns diagramas de processo de cada requisição no modelo BPMN <br>
 
+<img src="https://i.imgur.com/NqXWvQF.jpeg">
 
 
