@@ -46,3 +46,5 @@ O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiên
 
 _____________________________________________________________________________________________________________________________________________________________
 <h4> Requisições :traffic_light:</h4>
+Como uma Api é composta por requisições, a aplicação consta com alguns requisições sendo elas:
+<img src="https://i.imgur.com/E1xKkiO.png">
