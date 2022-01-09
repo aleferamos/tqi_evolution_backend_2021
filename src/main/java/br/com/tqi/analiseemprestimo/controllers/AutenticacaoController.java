@@ -23,16 +23,6 @@ public class AutenticacaoController {
 
     @PostMapping(value = "/validar")
     public ResponseEntity<Boolean> tokenIsValid(@RequestBody(required = false) TokenValidDto token){
-        try{
-
-            if(token.getToken().isBlank() || token.getToken() == null){
-                throw new RegraDeNegocioException("token.campoVazio");
-            }
-        }catch(NullPointerException npe){
-            throw new RegraDeNegocioException("token.campoVazio");
-        }
-
-
         Boolean tokenValid = autenticacaoService.isTokenValid(token.getToken());
         return ResponseEntity.ok(tokenValid);
     }
