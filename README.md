@@ -110,3 +110,10 @@ https://www.4shared.com/s/fzItN1Ih4ea
 
 7. Clique na aba Emprestimo e depois clique em Solicitar emprestimo, preencha os atributos do corpo da requisição e clique em send, preencha novamente com outros dados o emprestimo e clique em send para ficar mais de 1 emprestimo para testes.
 <img src="https://i.ibb.co/qg2LzZ5/image.png">
+
+8. Para ver os emprestimos solicitados, clique em Listar Emprestimo, e clique em send, perceba que nos resultados tem o campo codigoEmprestimo e o atributo é o id, iremos precisar desse número para detalhar o emprestimo.
+<img src="https://i.ibb.co/LgXX5dv/image.png">
+
+9. Como no passo anterior pegamos o valor do codigoEmprestimo, iremos utilizar para ver o detalhamento do emprestimo, clique em Obter Detalhe do emprestimo, insira o codigo emprestimo após a barra como na imagem exemplo : /emprestimo/detalhe/11 e clique em send.
+<img src="https://i.ibb.co/280syP6/image.png">
+
