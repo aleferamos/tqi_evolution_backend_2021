@@ -98,3 +98,6 @@ https://www.4shared.com/s/fzItN1Ih4ea
 
 3. Primeiro clique em cadastrar cliente, preencha os atributos do corpo da requisição e clique em send.
 <img src="https://i.imgur.com/ddhvPHh.png">
+
+4. Após cadastrar vamos autenticar na aplicação, primeiro clique na aba de Autenticação e clique em Autenticar, clique em body e preencha os atributos com email e senha cadastrado e clique em send.
+<img src="https://i.imgur.com/ierf1SN.png">
