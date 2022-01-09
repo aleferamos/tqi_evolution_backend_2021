@@ -6,3 +6,6 @@ Linguagem
 
 FrameWork
 <img src="https://svgshare.com/i/dN3.svg" width="35px">
+
+Banco de dados
+<img src="https://svgshare.com/i/dNy.svg" width="35px">
