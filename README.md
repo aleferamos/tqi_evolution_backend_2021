@@ -41,8 +41,9 @@ A aplicação foi programada de uma forma que para fazer as requisições é nec
 
 ______________________________________________________________________________________________________________________________________________________________
 <h4> Banco de dados :package:</h4>
-O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiência, na aplicação existe 3 entidades, sendo elas: cliente, emprestimo, endereco.
 
+O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiência, na aplicação existe 3 entidades, sendo elas: cliente, emprestimo, endereco.
+Caso queria acessar ele está dockerizado no ip: 177.153.59.31, username: root, password: alefek159
 <h5> Esquema </h5>
 <img src="https://i.imgur.com/oQ90uE1.png">
 
