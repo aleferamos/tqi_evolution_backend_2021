@@ -15,10 +15,10 @@ ________________________________________________________________________________
 <h3>Um pouco sobre a aplicação :technologist:</h3>
 
 A aplicação uma api rest e é separada em camadas, sendo elas: model, repository, service, controller.
-onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde ficam os métodos de persistência, e que por si já vem com métodos para poder facilitar a persistência. A camada service é a camada onde fica as regras de negócios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
+onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde ficam os métodos de persistência, e que por si já vem com métodos para poder facilitar a persistência. A camada service é a camada onde ficam as regras de negócios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
 
 <h4>Contexto</h4>
-Foi criado uma solução para uma empresa de empréstimos e precisa de um sistema de análise de crédito cuja as funções são: <br>
+Foi criada uma solução para uma empresa de empréstimos e precisa de um sistema de análise de crédito cuja as funções são: <br>
 Cadastro de cliente :pouting_face:<br>
 Autenticação :key:<br>
 Solicitação de empréstimo :man_dancing:<br>
@@ -32,7 +32,7 @@ ________________________________________________________________________________
 <h4>Ponto chave - Token :key:</4>
 
 A aplicação foi projetado com JWT (java web token)
-Esse é um tipo de autenticação onde caso você insira o email e senha que consta de um cliente no banco de dados, é gerado um token (uma sequência de letras, números e pontos) que a própria lógica da apliação verifica que esse token consta na secret da aplicação (uma senha onde guarda todos tokens gerados) e verifica se o token ainda não ta expirado, pois o token tme um tempo de expiração que você define e isso é como se foce uma sessão na aplicação. 
+Esse é um tipo de autenticação onde caso você insira o email e senha que consta de um cliente no banco de dados, é gerado um token (uma sequência de letras, números e pontos) que a própria lógica da apliação verifica que esse token consta na secret da aplicação (uma senha onde guarda todos tokens gerados) e verifica se o token ainda não está expirado, pois o token tme um tempo de expiração que você define e isso é como se foce uma sessão na aplicação. 
 <h5>Previlégios :lock:</h5>
 A aplicação foi programada de uma forma que para fazer as requisições é necessário autenticar, e autenticando, todos os registros, buscas e tudo, será apenas do cliente que foi autenticado, você não terá permissão de verficar dados, registros ou registrar dados em outros clientes.
 
@@ -42,7 +42,7 @@ A aplicação foi programada de uma forma que para fazer as requisições é nec
 ______________________________________________________________________________________________________________________________________________________________
 <h4> Banco de dados :package:</h4>
 
-O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiência, na aplicação existe 3 entidades, sendo elas: cliente, emprestimo, endereco.
+O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiência, na aplicação existem 3 entidades, sendo elas: cliente, emprestimo, endereco.
 Caso queria acessar ele está dockerizado no ip: 177.153.59.31, username: root, password: alefek159
 <h5> Esquema </h5>
 <img src="https://i.imgur.com/oQ90uE1.png">
@@ -50,7 +50,7 @@ Caso queria acessar ele está dockerizado no ip: 177.153.59.31, username: root, 
 _____________________________________________________________________________________________________________________________________________________________
 <h4> Requisições :traffic_light:</h4>
 Todas as requisições são feitas a partir do endereço: http://alefe.vps-kinghost.net:8080/sistema-credito <br><br> Para agilizar os teste, hospedei a api em um container da minha vps.
-Como uma Api é composta por requisições, a aplicação consta com alguns requisições sendo elas: <br>
+Como uma Api é composta por requisições, a aplicação consta com algumas requisições, sendo elas: <br>
 <img src="https://i.imgur.com/E1xKkiO.png">
 
 Na imagem o número 1 refere-se a requisição de cadastro, onde você pode mandar um corpo com todos os atributos a ser cadastrados, note: é obrigatorio a inserir os atributos e o valor, pois a aplicação está programada a não aceitar valores vazios, caso você cadastrou, você terá que fazer a requisição do número 2, que se refere a requisição de autenticar na aplicação com o email e senha que o cliente foi criado, após isso é possivel fazer requisições sobre emprestimo no sistema. Como vemos na imagem temos a sessão Autenticação e lá tem a requisição para validar o token, cuja requisição não é utilizado pelo cliente e sim para uma demonstração de como funciona essa função de validação de token.<br>
@@ -120,7 +120,7 @@ https://www.4shared.com/s/fnM50oUAUea
 9. Como no passo anterior pegamos o valor do codigoEmprestimo, iremos utilizar para ver o detalhamento do emprestimo, clique em Obter Detalhe do emprestimo, insira o codigo emprestimo após a barra como na imagem exemplo : /emprestimo/detalhe/11 e clique em send.
 <img src="https://i.ibb.co/280syP6/image.png">
 
-Com isso podemos também fazer os testes de excessões como mostado nos diagramas de processo, e com isso finalizamos as requisições. Note: essas requisões não funciona apenas em postman mas em todos aplicativos de requisições.
+Com isso, podemos também fazer os testes de excessões como mostado nos diagramas de processo, e com isso finalizamos as requisições. Note: essas requisões não funcionam apenas em postman, mas em todos aplicativos de requisições.
 
 _______________________________________________________________________________________________________________________________________________________________________
 <h4> Aplicação front-end</h4>
