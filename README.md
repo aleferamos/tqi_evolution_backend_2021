@@ -9,6 +9,8 @@ FrameWork
 
 Banco de dados
 <img src="https://svgshare.com/i/dNy.svg" width="35px">
+
+Leiam até o final!
 ______________________________________________________________________________________________________________________________________________________________
 <h3>Um pouco sobre a aplicação :technologist:</h3>
 
@@ -118,4 +120,7 @@ https://www.4shared.com/s/fnM50oUAUea
 <img src="https://i.ibb.co/280syP6/image.png">
 
 Com isso podemos também fazer os testes de excessões como mostado nos diagramas de processo, e com isso finalizamos as requisições. Note: essas requisões não funciona apenas em postman mas em todos aplicativos de requisições.
+
+_______________________________________________________________________________________________________________________________________________________________________
+<h4> Aplicação front-end</h4>
 
