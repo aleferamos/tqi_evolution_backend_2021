@@ -124,3 +124,7 @@ Com isso podemos também fazer os testes de excessões como mostado nos diagrama
 _______________________________________________________________________________________________________________________________________________________________________
 <h4> Aplicação front-end</h4>
 
+E pra fechar com chave de ouro, fiz uma aplicação front consumindo a api, Basta clonar o repositório: https://github.com/aleferamos/tqi_evolution_frontend_2021, é necessário ter node e angular-cli instalados na maquina, caso tenha isso, entre na raiz e digite npm install demora um pouco, após terminar, digite npm start, após carregar, va no navegador e digite localhost:4200.
+Ao entrar no sistema, terá um botão de fazer login e outro de cadastrar, faça o cadastro, após isso clique em login e põe o email e senha, ao entrar depare com essa tela.
+<img src="https://i.imgur.com/NZmasuN.png">
+Agora só navegar no sistema e fazer os testes.
