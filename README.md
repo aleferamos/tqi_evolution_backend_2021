@@ -15,7 +15,7 @@ ________________________________________________________________________________
 <h3>Um pouco sobre a aplicação :technologist:</h3>
 
 A aplicação uma api rest e é separada em camadas, sendo elas: model, repository, service, controller.
-onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde fica os métodos de persistência, e que por si já vem com métodos para poder facilitar a persistência. A camada service é a camada onde fica as regras de negócios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
+onde model é a camada de modelo, onde é definido o nome do objeto e seus atributos. A camada repository é onde ficam os métodos de persistência, e que por si já vem com métodos para poder facilitar a persistência. A camada service é a camada onde fica as regras de negócios ou os métodos de serviço, e a camada final que pode ser criado os end-points para fazer as requisições.
 
 <h4>Contexto</h4>
 Foi criado uma solução para uma empresa de empréstimos e precisa de um sistema de análise de crédito cuja as funções são: <br>
@@ -49,11 +49,11 @@ Caso queria acessar ele está dockerizado no ip: 177.153.59.31, username: root, 
 
 _____________________________________________________________________________________________________________________________________________________________
 <h4> Requisições :traffic_light:</h4>
-Todas as requisições é feitas a partir do endereço: http://alefe.vps-kinghost.net:8080/sistema-credito <br><br> Para agilizar os teste, hospedei a api em um container da minha vps.
+Todas as requisições são feitas a partir do endereço: http://alefe.vps-kinghost.net:8080/sistema-credito <br><br> Para agilizar os teste, hospedei a api em um container da minha vps.
 Como uma Api é composta por requisições, a aplicação consta com alguns requisições sendo elas: <br>
 <img src="https://i.imgur.com/E1xKkiO.png">
 
-Na imagem o número 1 referece a requisição de cadastro, onde você pode mandar um corpo com todos os atributos a ser cadastrados, note: é obrigatorio a inserir os atributos e o valor, pois a aplicação está programada a não aceitar valores vazios, caso você cadastrou, você terá que fazer a requisição do número 2, que se refere a requisição de autenticar na aplicação com o email e senha que o cliente foi criado, após isso é possivel fazer requisições sobre emprestimo no sistema. Como vemos na imagem temos a sessão Autenticação e lá tem a requisição para validar o token, cuja requisição não é utilizado pelo cliente e sim para uma demonstração de como funciona essa função de validação de token.<br>
+Na imagem o número 1 refere-se a requisição de cadastro, onde você pode mandar um corpo com todos os atributos a ser cadastrados, note: é obrigatorio a inserir os atributos e o valor, pois a aplicação está programada a não aceitar valores vazios, caso você cadastrou, você terá que fazer a requisição do número 2, que se refere a requisição de autenticar na aplicação com o email e senha que o cliente foi criado, após isso é possivel fazer requisições sobre emprestimo no sistema. Como vemos na imagem temos a sessão Autenticação e lá tem a requisição para validar o token, cuja requisição não é utilizado pelo cliente e sim para uma demonstração de como funciona essa função de validação de token.<br>
 
 Vamos para melhor parte, acima falamos sobre o nome das requisições, agora vamos para os end-points.
 
