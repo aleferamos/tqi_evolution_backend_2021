@@ -46,7 +46,7 @@ O banco utilizado foi mysql, não apenas o conhecimento mas o tempo de experiên
 
 _____________________________________________________________________________________________________________________________________________________________
 <h4> Requisições :traffic_light:</h4>
-Todas as requisições é feitas a partir do endereço: alefe.vps-kinghost.net:8080/sistema-credito <br><br> Para agilizar os teste, hospedei a api em um container da minha vps.
+Todas as requisições é feitas a partir do endereço: http://alefe.vps-kinghost.net:8080/sistema-credito <br><br> Para agilizar os teste, hospedei a api em um container da minha vps.
 Como uma Api é composta por requisições, a aplicação consta com alguns requisições sendo elas: <br>
 <img src="https://i.imgur.com/E1xKkiO.png">
 
